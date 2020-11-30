@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <button id="myBtn">Add Book</button>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="form-container">
+        <div class="title">
+        Title <br>
+        <input type="text" id="title" maxlength="41" placeholder="Enter the book's title" name="title" required>
+        </div>
+        <div class="author">
+            Author <br>
+            <input type="text" id="author" maxlength="41" placeholder="Enter the author's name" name="author" required>
+        </div>
+        <div class="pages">
+            Pages <br>
+            <input type="number" id="pages" maxlength="9" placeholder="Enter the pages count" name="pages" required>
+        </div>
+        <div class="read-status">
+            <div>    
+            Read status:
+                <input type="radio" name="read" id="read" value="Read" checked>
+                  <label for="Read"><b>Read</b></label>
+       
+                <input type="radio" name="read" id="not-read" value="Not read">
+                 <label for="Not read"><b>Not read</b></label>
+                </div>
+             <div>
+                <button class="add-book">Add Book</button>
+        </div>
+    </div>
+  </div>
+
+</div>
+    
+    <script src="/src/index.js" type="module"></script>
+</body>
+</html>
