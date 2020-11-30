@@ -1,0 +1,23 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "A web app for creating a library of book cards with titles, author names and read status",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivantbv/lib.git"
+  },
+  "author": "Ivan Georgiev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivantbv/lib/issues"
+  },
+  "homepage": "https://github.com/ivantbv/lib#readme",
+  "devDependencies": {
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
