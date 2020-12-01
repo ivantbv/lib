@@ -1,9 +1,9 @@
-import {Book, myLibrary, bookRead} from "/src/creatingBooks.js"
+import {Book, bookRead} from "/src/creatingBooks.js"
 
+let myLibrary = [];
 const bookTitle = document.querySelector('#title')
 const bookAuthor = document.querySelector('#author')
 const bookPages = document.querySelector('#pages')
-
 
 const addBookToLibrary = () => {
     let radioBtnValue;
@@ -14,13 +14,9 @@ const addBookToLibrary = () => {
     }
     console.log(radioBtnValue, 'radio btn value')
 
-    const bookInfo = new Book(`${bookTitle.value}`, `by ${bookAuthor.value}`, `${bookPages.value}`, `Read status: ${radioBtnValue}` )
+    const bookInfo = new Book(`${bookTitle.value}`, `by ${bookAuthor.value}`, `${bookPages.value}`, `Read status: ${radioBtnValue}`)
 
     myLibrary.push(bookInfo);
-
-    for (let book in myLibrary) {
-        console.log(myLibrary[book])
-    }
 }
 
-export {addBookToLibrary}
+export {addBookToLibrary, myLibrary}
