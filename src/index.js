@@ -1,6 +1,7 @@
-import {DomManipulation} from "/src/domManipulation.js"
-import {addBookToLibrary} from "/src/addingBooks.js"
-import {render} from "/src/renderBook.js"
+import { DomManipulation } from "/src/domManipulation.js"
+import { addBookToLibrary } from "/src/addingBooks.js"
+import { render } from "/src/renderBook.js"
+import {myLibrary} from "/src/addingBooks.js"
 
 const domManip = new DomManipulation()
 domManip.openModal();
@@ -8,7 +9,8 @@ domManip.openModal();
 const addBookButton = document.querySelector('.add-book')
 addBookButton.addEventListener('click', () => {
 
-addBookToLibrary()
-render()
+    addBookToLibrary()
+    render()
+    console.log(myLibrary)
 });
 
