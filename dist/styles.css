@@ -33,3 +33,9 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .book-card {
+    border: 2px solid black;
+    display: grid;
+    
+  }

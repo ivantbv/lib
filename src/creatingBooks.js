@@ -1,4 +1,5 @@
-let myLibrary = []
+import {myLibrary} from "/src/addingBooks.js"
+
 const form = document.querySelector('.form-container');
 const bookRead = document.querySelectorAll('input[name="read"]')
 export class Book {
@@ -11,7 +12,8 @@ export class Book {
             if (i.checked) read = i.value
         })
         this.id = myLibrary.length
-        console.log(read, 'console.log from constructor')
+        //^ fix the id to be 0 and incremented when a book object is added
+        
     }
 
 }
