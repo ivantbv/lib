@@ -3,6 +3,10 @@ import {counter} from "/src/creatingBooks.js"
 
 const appendBookDiv = document.querySelector('.append-book')
 
+const setLocalStorage = () => {
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary))
+}
+
 const render = () => {
     //creating the elements in the book's card
     const bookCard = document.createElement('div');
@@ -40,6 +44,7 @@ const render = () => {
        for (let i=0; i < myLibrary.length; i++) {
             if (e.target.getAttribute('data-id') == myLibrary[i].id) {
                 myLibrary.splice([i], 1)
+                setLocalStorage();
             }
        }
         //myLibrary.splice(myLibrary.indexOf(e.target.getAttribute('data-id')), 1); 
@@ -56,10 +61,11 @@ const render = () => {
                 if (myLibrary[i].read === 'Read') {
                     myLibrary[i].read = 'Not read'
                     bookRead.textContent = myLibrary[i].read;
-
+                    setLocalStorage()
                 } else if (myLibrary[i].read === 'Not read') {
                     myLibrary[i].read = 'Read'
                     bookRead.textContent = myLibrary[i].read;
+                    setLocalStorage();
                 }
 
                 console.log(myLibrary, 'from toggle read btn')
@@ -76,6 +82,7 @@ const render = () => {
     appendBookDiv.appendChild(bookCard);
 
     console.log(deleteBookButton, 'del btnrender');
+    setLocalStorage();
 }
 
-export { render }
+export { render, setLocalStorage }

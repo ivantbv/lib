@@ -1,6 +1,6 @@
 import {Book, bookRead} from "/src/creatingBooks.js"
 
-let myLibrary = []
+var myLibrary = []
 const bookTitle = document.querySelector('#title')
 const bookAuthor = document.querySelector('#author')
 const bookPages = document.querySelector('#pages')
