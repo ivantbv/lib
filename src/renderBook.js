@@ -1,5 +1,5 @@
 import { myLibrary, modifyLibrary } from "/src/addingBooks.js"
-import {counter} from "/src/creatingBooks.js"
+//import {counter} from "/src/creatingBooks.js"
 
 const appendBookDiv = document.querySelector('.append-book')
 
@@ -7,7 +7,7 @@ const setLocalStorage = () => {
     localStorage.setItem('myLibrary', JSON.stringify(myLibrary))
 }
 
-function render(bookInfo) {
+const render = bookInfo => {
     //creating the elements in the book's card
     const bookCard = document.createElement('div');
     bookCard.classList.add('book-card')
@@ -41,9 +41,8 @@ function render(bookInfo) {
 
     deleteBookButton.addEventListener('click', (e) => {
         myLibrary.splice(myLibrary.indexOf(bookInfo),1);
-        createBook()    
+        createBook(myLibrary)    
         setLocalStorage()
-        //e.target.parentElement.remove();
 
         console.log(myLibrary, 'from del btn');
     })
@@ -54,7 +53,7 @@ function render(bookInfo) {
         } else if (bookInfo.read === 'Not read') {
             bookInfo.read = 'Read'
         }
-        createBook()
+        createBook(myLibrary)
         setLocalStorage()
         console.log(myLibrary, 'from toggle read btn')
     })
@@ -66,32 +65,30 @@ function render(bookInfo) {
     bookCard.appendChild(deleteBookButton);
     bookCard.appendChild(toggleReadButton);
     appendBookDiv.appendChild(bookCard);
-
-    console.log(deleteBookButton, 'del btnrender');
 }
 
-function createBook() {
+function createBook(libraryArr) {
     const bookContainer = document.querySelector('.append-book')
     const books = document.querySelectorAll('.book-card')
 
     books.forEach(book => bookContainer.removeChild(book))
     console.log(books, 'from createBook func')
-    for (let i =0; i < myLibrary.length; i++) {
-        render(myLibrary[i])
+    for (let i =0; i < libraryArr.length; i++) {
+        render(libraryArr[i])
     }
 }
 
 //pulls books from the localStorage (if any) and displays them on the page
-const restore = () => {
+const getLocalStorage = () => {
      if (!localStorage.myLibrary) {
-        createBook()
+        createBook(myLibrary)
     } else {
         const localStrgObjects = JSON.parse(localStorage.getItem('myLibrary'));
         modifyLibrary(localStrgObjects);
-        createBook()
+        createBook(myLibrary)
     }
 }
 
-restore();
+getLocalStorage();
 
- export { createBook }
+ export { createBook, render }
