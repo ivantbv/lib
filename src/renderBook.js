@@ -17,6 +17,8 @@ const render = bookInfo => {
     bookAuthor.classList.add('book-author')
     const bookPages = document.createElement('div');
     bookPages.classList.add('book-pages')
+    const bookLink = document.createElement('a');
+    bookLink.classList.add('book-link')
 
     const bookRead = document.createElement('div')
     bookRead.classList.add('book-read')
@@ -34,17 +36,17 @@ const render = bookInfo => {
     bookAuthor.textContent = bookInfo.author;
     bookPages.textContent = bookInfo.pages;
     bookRead.textContent = bookInfo.read;
+    bookLink.href = bookInfo.link    
+    bookLink.textContent = 'Read this book'
+    
     setLocalStorage();
 
     // deleteBookButton.setAttribute('data-id', counter)
-    // toggleReadButton.setAttribute('data-id', counter)
 
     deleteBookButton.addEventListener('click', (e) => {
         myLibrary.splice(myLibrary.indexOf(bookInfo),1);
         createBook(myLibrary)    
         setLocalStorage()
-
-        console.log(myLibrary, 'from del btn');
     })
 
     toggleReadButton.addEventListener('click', (e) => {
@@ -53,17 +55,22 @@ const render = bookInfo => {
         } else if (bookInfo.read === 'Not read') {
             bookInfo.read = 'Read'
         }
+
         createBook(myLibrary)
         setLocalStorage()
-        console.log(myLibrary, 'from toggle read btn')
     })
 
     bookCard.appendChild(bookTitle);
-    bookCard.appendChild(bookAuthor);
+
+    if (bookInfo.author !== 'by ') { bookCard.appendChild(bookAuthor); }
+    console.log(bookInfo.author)
     bookCard.appendChild(bookPages);
     bookCard.appendChild(bookRead);
+    if (bookInfo.link) { bookCard.appendChild(bookLink); }
+
     bookCard.appendChild(deleteBookButton);
     bookCard.appendChild(toggleReadButton);
+
     appendBookDiv.appendChild(bookCard);
 }
 

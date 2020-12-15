@@ -21,4 +21,8 @@ export class DomManipulation {
             }
         })
     }
+
+    closeModal() {
+        this.modal.style.display = 'none';
+    }
 }

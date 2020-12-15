@@ -29,7 +29,7 @@
     <span class="close">&times;</span>
     <div class="form-container">
         <div class="title">
-        Title <br>
+        Title* <br>
         <input type="text" id="title" maxlength="41" placeholder="Enter the book's title" name="title" required>
         </div>
         <div class="author">
@@ -40,6 +40,14 @@
             Pages <br>
             <input type="number" id="pages" maxlength="9" placeholder="Enter the pages count" name="pages">
         </div>
+
+        <div class="book-link">
+            <div>
+                Book's URL:
+                <input type="text" name="link" id="link" placeholder="Link where you can read the book">
+            </div>
+        </div>
+
         <div class="read-status">
             <div>    
             Read status:
@@ -50,14 +58,14 @@
                  <label for="not-read"><b>Not read</b></label>
                 </div>
              <div>
-                <button class="add-book">Add Book</button>
+                <button class="add-book" disabled>Add Book</button>
         </div>
     </div>
-  </div>
+</div>
 
 </div>
 
     <!-- need to reference main.js v -->
-    <script src="/src/index.js" type="module"></script>
+    <script src="main.js"></script>
 </body>
 </html>
