@@ -51,6 +51,10 @@
     font-size: 16px;
   }
 
+  .add-book:disabled {
+    background-color: #a8acaf;
+  }
+
   .append-book {
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +77,6 @@
     padding: 18px; margin: 12px;
     border-radius: 4px; border: 2px rgba(216, 112, 147, 0.637) solid; 
     text-align: center;
-    
   }
 
   .title, .author, .pages, .book-link {
@@ -81,6 +84,14 @@
     text-align: center;
   }
 
+  .book-author {
+    padding-top: 5px;
+  }
+
+  .book-title {
+    align-self: center;
+    padding-bottom: 5px;
+  }
   .form-container input[type=text], .form-container input[type=password], .form-container input[type=number] {
     width: 85%;
     padding: 15px;
@@ -101,9 +112,9 @@
 
   }
 
-  /* .book-title {
-    display: flex;
-  } */
+  .book-title {
+    border-bottom: 2px solid #72bfd2;
+  }
 
   .delete-book {
     color: white;
