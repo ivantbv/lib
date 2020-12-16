@@ -24,7 +24,7 @@ const render = bookInfo => {
     bookRead.classList.add('book-read')
 
     const deleteBookButton = document.createElement('button');
-    deleteBookButton.classList.add('delete-book')
+    deleteBookButton.classList.add('delete-book', 'flex')
     deleteBookButton.textContent = 'X';
 
     const toggleReadButton = document.createElement('button');

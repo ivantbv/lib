@@ -20,15 +20,16 @@
 
     <button id="myBtn">Add Book</button>
 
-     
-<div class="append-book"></div>
+     <divc class="wrapper">
+        <div class="append-book"></div>
+     </div>
 
 <div id="myModal" class="modal">
 
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="form-container">
-        <div class="title">
+        <div class="title flex">
         Title* <br>
         <input type="text" id="title" maxlength="41" placeholder="Enter the book's title" name="title" required>
         </div>
@@ -43,7 +44,7 @@
 
         <div class="book-link">
             <div>
-                Book's URL:
+                Book's URL: <br>
                 <input type="text" name="link" id="link" placeholder="Link where you can read the book">
             </div>
         </div>
@@ -57,7 +58,7 @@
                 <input type="radio" name="read" id="not-read" value="Not read">
                  <label for="not-read"><b>Not read</b></label>
                 </div>
-             <div>
+             <div class="add-btn-div">
                 <button class="add-book" disabled>Add Book</button>
         </div>
     </div>
