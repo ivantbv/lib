@@ -39,7 +39,7 @@
         </div>
         <div class="pages">
             Pages <br>
-            <input type="number" id="pages" maxlength="9" placeholder="Enter the pages count" name="pages">
+            <input type="number" id="pages" maxlength="999" min="1" max="9001" onKeyPress="if(this.value.length=== 10) return false;" placeholder="Enter the pages count" name="pages">
         </div>
 
         <div class="book-link">
