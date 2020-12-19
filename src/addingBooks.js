@@ -5,6 +5,7 @@ const bookTitle = document.querySelector('#title')
 const bookAuthor = document.querySelector('#author')
 const bookPages = document.querySelector('#pages')
 const bookURL = document.querySelector('#link')
+const bookImg = document.querySelector('#picture')
 
 let radioBtnValue;
 const addBookToLibrary = () => {
@@ -15,7 +16,7 @@ const addBookToLibrary = () => {
         }
     }
 
-    const bookInfo = new Book(`${bookTitle.value}`, `by ${bookAuthor.value}`, `${bookPages.value}`, `${radioBtnValue}`, `${bookURL.value}`)
+    const bookInfo = new Book(`${bookTitle.value}`, `by ${bookAuthor.value}`, `${bookPages.value} pages`, `${radioBtnValue}`, `${bookURL.value}`, `${bookImg.value}`)
     
     myLibrary.push(bookInfo);
     console.log(bookInfo.id, myLibrary, 'from add book to libr func')

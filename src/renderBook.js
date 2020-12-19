@@ -19,7 +19,8 @@ const render = bookInfo => {
     bookPages.classList.add('book-pages')
     const bookLink = document.createElement('a');
     bookLink.classList.add('book-link')
-
+    const bookPic = document.createElement('img')
+    bookPic.classList.add('book-pic');
     const bookRead = document.createElement('div')
     bookRead.classList.add('book-read')
 
@@ -38,6 +39,14 @@ const render = bookInfo => {
     bookRead.textContent = bookInfo.read;
     bookLink.href = bookInfo.link    
     bookLink.textContent = 'Read this book'
+    bookPic.src = bookInfo.image;
+    console.log(bookPic.getAttribute('src'), bookInfo.image, 'book src')
+    if (bookPic.getAttribute('src') === '') {
+        bookPic.src = '/dist/images/NotAvailable.jpeg'
+    }
+    
+    bookPic.alt = 'Book\'s image'
+
     
     setLocalStorage();
 
@@ -63,11 +72,10 @@ const render = bookInfo => {
     bookCard.appendChild(bookTitle);
 
     if (bookInfo.author !== 'by ') { bookCard.appendChild(bookAuthor); }
-    console.log(bookInfo.author)
-    bookCard.appendChild(bookPages);
+    if (bookInfo.pages !== ' pages') {bookCard.appendChild(bookPages); }
     bookCard.appendChild(bookRead);
     if (bookInfo.link) { bookCard.appendChild(bookLink); }
-
+    bookCard.appendChild(bookPic);
     bookCard.appendChild(deleteBookButton);
     bookCard.appendChild(toggleReadButton);
 

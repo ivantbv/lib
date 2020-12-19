@@ -22,5 +22,5 @@ addBookButton.addEventListener('click', () => {
 searchLibrary();
 
 
-//TODO add rating system of each book (5 stars), link to read each book
+//TODO add rating system of each book (5 stars)
 //and photo
