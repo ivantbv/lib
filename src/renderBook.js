@@ -39,45 +39,14 @@ const render = bookInfo => {
     bookRead.textContent = bookInfo.read;
     bookLink.href = bookInfo.link    
     bookLink.textContent = 'Read this book'
+    bookLink.target = '_blank'
     bookPic.src = bookInfo.image;
     console.log(bookPic.getAttribute('src'), bookInfo.image, 'book src')
     if (bookPic.getAttribute('src') === '') {
         bookPic.src = '/dist/images/NotAvailable.jpeg'
-
-        const upload = document.createElement('input')
-        const fileSelect = document.createElement('a')
-        fileSelect.href = '#'
-        fileSelect.textContent = 'Select an image'
-        upload.type = 'file'
-        upload.accept = 'image/*'
-        upload.style.display = 'none'
-        bookCard.appendChild(upload)
-        bookCard.appendChild(fileSelect)
-
-        fileSelect.addEventListener('click', function (e) {
-            if (upload) {
-              upload.click();
-            }
-            e.preventDefault(); // prevent navigation to "#"
-          }, false);
-
-          upload.addEventListener("change", handleFiles, false);
     }
-    
     bookPic.alt = 'Book\'s image'
 
-    function handleFiles() {
-        for (let i = 0; i < this.files.length; i++) {
-            bookPic.src = URL.createObjectURL(this.files[i]);
-
-            bookPic.onload = function() {
-                URL.revokeObjectURL(this.src);
-              }
-              bookCard.appendChild(bookPic)
-        }
-    }
-
-    
     setLocalStorage();
 
     // deleteBookButton.setAttribute('data-id', counter)
