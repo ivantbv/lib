@@ -7,9 +7,9 @@ const domManip = new DomManipulation()
 domManip.openModal();
 
 const addBookButton = document.querySelector('.add-book')
-document.querySelector('#title').onkeyup = enableSubmit;
+document.querySelector('#title').onkeyup = enableSubmitBtn;
 
-function enableSubmit() {
+function enableSubmitBtn() {
     document.querySelector('.add-book').disabled = (document.querySelector('#title').value === '');
   }
 
@@ -22,5 +22,6 @@ addBookButton.addEventListener('click', () => {
 searchLibrary();
 
 
-//TODO add rating system of each book (5 stars)
-//and photo
+//TODO: add notes on the back of each book card
+//add the ability to upload a photo if "book image not available" from the
+//book card itself
