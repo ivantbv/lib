@@ -1,3 +1,9 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+html {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
 .modal {
     display: none; 
     position: fixed;
@@ -70,9 +76,9 @@
 
     box-shadow: 0 3px 9px #bbb, inset 0 0 0 1px white;
     width: 270px;
-    height: 370px;
-    background-color: #2f7db1;
-    font-size: large;
+    height: 350px;
+    background-color: #2f7db1f5;
+    /* font-size: large; */
     padding: 18px; margin: 12px;
     border-radius: 4px; border: 2px rgba(216, 112, 147, 0.637) solid; 
     text-align: center;
@@ -80,6 +86,12 @@
 
   .title, .author, .pages, .book-link {
     text-align: center;
+  }
+
+  .book-link {
+    text-decoration: none;
+    color: #2f13bd;
+    font-weight: bold;
   }
 
   .book-author {
@@ -171,5 +183,29 @@ height: 500px;
     position:relative;
     top:1px;
   }
+
+  .read-div {
+    display: inline;
+    justify-content: center;
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   
+    /* Styling checkbox */
+    width: 28px;
+    height: 28px;
+    background-color: rgb(194, 54, 11);
+
+    border-radius: 10px;
+  }
   
+  input[type="checkbox"]:checked {
+    background-color: green;
+  }
+
+  input[type="checkbox"]:hover {
+    cursor: pointer;
+  }
