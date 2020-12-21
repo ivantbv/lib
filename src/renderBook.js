@@ -23,14 +23,29 @@ const render = bookInfo => {
     bookPic.classList.add('book-pic');
     const bookRead = document.createElement('div')
     bookRead.classList.add('book-read')
+    const readDiv = document.createElement('div');
 
     const deleteBookButton = document.createElement('button');
     deleteBookButton.classList.add('delete-book', 'flex')
     deleteBookButton.textContent = 'X';
 
-    const toggleReadButton = document.createElement('button');
-    toggleReadButton.classList.add('read-button')
-    toggleReadButton.textContent = 'Read Status'
+    // const toggleReadButton = document.createElement('button');
+    // toggleReadButton.classList.add('read-button')
+    // toggleReadButton.textContent = 'Read Status'
+
+    const toggleReadButton = document.createElement('input');
+    toggleReadButton.type = 'checkbox'
+    toggleReadButton.classList.add('read-check')
+    if (bookInfo.read === 'Read') {
+        toggleReadButton.checked = true;
+    } else {
+        toggleReadButton.checked = false;
+    }
+
+    readDiv.appendChild(bookRead)
+    readDiv.appendChild(toggleReadButton)
+
+    readDiv.classList.add('read-div')
 
     //get the text content from the library array from createBook function
     bookTitle.textContent = bookInfo.title;
@@ -38,10 +53,9 @@ const render = bookInfo => {
     bookPages.textContent = bookInfo.pages;
     bookRead.textContent = bookInfo.read;
     bookLink.href = bookInfo.link    
-    bookLink.textContent = 'Read this book'
+    bookLink.textContent = 'Click to read this book'
     bookLink.target = '_blank'
     bookPic.src = bookInfo.image;
-    console.log(bookPic.getAttribute('src'), bookInfo.image, 'book src')
     if (bookPic.getAttribute('src') === '') {
         bookPic.src = '/dist/images/NotAvailable.jpeg'
     }
@@ -49,19 +63,29 @@ const render = bookInfo => {
 
     setLocalStorage();
 
-    // deleteBookButton.setAttribute('data-id', counter)
-
     deleteBookButton.addEventListener('click', (e) => {
         myLibrary.splice(myLibrary.indexOf(bookInfo),1);
         createBook(myLibrary)    
         setLocalStorage()
     })
 
-    toggleReadButton.addEventListener('click', (e) => {
-         if (bookInfo.read === 'Read') {
+    // toggleReadButton.addEventListener('click', (e) => {
+    //      if (bookInfo.read === 'Read') {
+    //         bookInfo.read = 'Not read'
+    //     } else if (bookInfo.read === 'Not read') {
+    //         bookInfo.read = 'Read'
+    //     }
+
+    //     createBook(myLibrary)
+    //     setLocalStorage()
+    // })
+    toggleReadButton.addEventListener('click', function() {
+        if (bookInfo.read === 'Read') {
             bookInfo.read = 'Not read'
+            console.log(bookInfo.read)
         } else if (bookInfo.read === 'Not read') {
             bookInfo.read = 'Read'
+            console.log(bookInfo.read)
         }
 
         createBook(myLibrary)
@@ -72,11 +96,11 @@ const render = bookInfo => {
 
     if (bookInfo.author !== 'by ') { bookCard.appendChild(bookAuthor); }
     if (bookInfo.pages !== ' pages') {bookCard.appendChild(bookPages); }
-    bookCard.appendChild(bookRead);
+    bookCard.appendChild(readDiv);
     if (bookInfo.link) { bookCard.appendChild(bookLink); }
     bookCard.appendChild(bookPic);
     bookCard.appendChild(deleteBookButton);
-    bookCard.appendChild(toggleReadButton);
+    //bookCard.appendChild(toggleReadButton);
 
     appendBookDiv.appendChild(bookCard);
 }
@@ -105,4 +129,4 @@ const getLocalStorage = () => {
 
 getLocalStorage();
 
- export { createBook, render }
+ export { createBook, render, setLocalStorage }
