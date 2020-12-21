@@ -19,7 +19,6 @@ const addBookToLibrary = () => {
     const bookInfo = new Book(`${bookTitle.value}`, `by ${bookAuthor.value}`, `${bookPages.value} pages`, `${radioBtnValue}`, `${bookURL.value}`, `${bookImg.value}`)
     
     myLibrary.push(bookInfo);
-    console.log(bookInfo.id, myLibrary, 'from add book to libr func')
 }
 
 export const modifyLibrary = value => myLibrary = value; /* when myLibrary gets exported it becomes a const by default and it cant be reassigned when pulling the localStorage. This function allows to modify myLibrary array after export */

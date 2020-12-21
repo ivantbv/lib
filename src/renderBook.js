@@ -53,10 +53,9 @@ const render = bookInfo => {
     bookPages.textContent = bookInfo.pages;
     bookRead.textContent = bookInfo.read;
     bookLink.href = bookInfo.link    
-    bookLink.textContent = 'Read this book'
+    bookLink.textContent = 'Click to read this book'
     bookLink.target = '_blank'
     bookPic.src = bookInfo.image;
-    console.log(bookPic.getAttribute('src'), bookInfo.image, 'book src')
     if (bookPic.getAttribute('src') === '') {
         bookPic.src = '/dist/images/NotAvailable.jpeg'
     }
@@ -130,4 +129,4 @@ const getLocalStorage = () => {
 
 getLocalStorage();
 
- export { createBook, render }
+ export { createBook, render, setLocalStorage }
