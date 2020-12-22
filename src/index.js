@@ -2,9 +2,10 @@ import { DomManipulation } from "/src/domManipulation.js"
 import { addBookToLibrary, myLibrary } from "/src/addingBooks.js"
 import { createBook } from "/src/renderBook.js"
 import { searchLibrary } from "/src/searchBooks.js"
-import { renderDefaultBooks } from "/src/localStorage.js"
+import { renderDefaultBooks, setLocalStorage } from "/src/localStorage.js"
 
 //if localStorage is empty it renders couple of default books on the page
+setLocalStorage();
 renderDefaultBooks();
 
 //handles modal open/close
