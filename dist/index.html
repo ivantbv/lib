@@ -8,9 +8,10 @@
 </head>
 <body>
     
-    <input type="text" placeholder="type to search your books" class="searchBar"> <br>
-    
-            <div>
+    <div class="search-wrap">
+    <input type="text" placeholder="type to search books" class="searchBar"> <br>
+    </div>
+            <div class="search-options-wrap">
             <input type="radio" name="filter-search" id="book-name" value="by name" checked>
             <label for="book-name"><b>By Title</b></label>
 
@@ -18,9 +19,9 @@
             <label for="book-author"><b>By Author</b></label>
             </div>
             <br>
-
-    <button id="myBtn">Add Book</button>
-
+    <div id="add-book-btn-wrap">        
+    <button id="myBtn">New Book</button>
+    </div>
      <divc class="wrapper">
         <div class="append-book"></div>
      </div>
@@ -43,23 +44,23 @@
             <input type="number" id="pages" maxlength="999" min="1" max="9001" onKeyPress="if(this.value.length=== 10) return false;" placeholder="Enter the pages count" name="pages">
         </div>
 
-        <div class="book-link">
+        <div class="book-url">
             <div>
-                Book's URL: <br>
+                Book's URL <br>
                 <input type="text" name="link" id="link" placeholder="Link where you can read the book">
             </div>
         </div>
 
         <div class="book-picture">
             <div>
-                Book's Image: <br>
-                <input type="text" name="picture" id="picture" placeholder="URL that hosts the image or ends with .jpg, .png, .gif etc.">
+                Book's Image <br>
+                <input type="text" name="picture" id="picture" placeholder="URL that hosts the image">
             </div>
         </div>
 
         <div class="read-status">
             <div>    
-            Read status:
+            Read status: <br>
                 <input type="radio" name="read" id="read" value="Read" checked>
                   <label for="read"><b>Read</b></label>
        

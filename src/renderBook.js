@@ -53,7 +53,7 @@ const render = bookInfo => {
     bookPages.textContent = bookInfo.pages;
     bookRead.textContent = bookInfo.read;
     bookLink.href = bookInfo.link    
-    bookLink.textContent = 'Click to read this book'
+    bookLink.textContent = 'Read the book here'
     bookLink.target = '_blank'
     bookPic.src = bookInfo.image;
     if (bookPic.getAttribute('src') === '') {
