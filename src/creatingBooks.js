@@ -1,7 +1,4 @@
-import {myLibrary} from "/src/addingBooks.js"
-const form = document.querySelector('.form-container');
 const bookRead = document.querySelectorAll('input[name="read"]')
-//counter for the id in the Book object. gets incremented on each new book
 let counter = 0;
 
 export class Book {

@@ -8,13 +8,16 @@ export class DomManipulation {
     openModal() {
         this.modalBtn.addEventListener('click', () => {
             this.modal.style.display = "block";
+
+            if (document.querySelector('#title').value === '') {
+                document.querySelector('.add-book').disabled = true;
+            }
         })
 
         this.modalSpan.addEventListener('click', () => {
             this.modal.style.display = "none";
         })
 
-        //When user clicks anywhere outside the modal, close it
         window.addEventListener('click', (e) => {
             if (e.target == this.modal) {
                 this.modal.style.display = "none";
