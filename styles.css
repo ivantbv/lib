@@ -2,6 +2,9 @@
 
 html {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  /* width: 100%;
+  height: 100%; */
+  background: radial-gradient(circle at 50% center, rgb(112 134 215 / 48%) 0%, rgb(15 109 240 / 30%) 100%, rgb(82 66 205 / 43%) 100%);
 }
 
 .modal {
@@ -61,6 +64,50 @@ html {
     background-color: #a8acaf;
   }
 
+  .search-wrap, .search-options-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-options-wrap {
+    padding: 8px;
+  }
+
+  .searchBar {
+    justify-self: center;
+    width: 96%;
+    border: 3px solid #0070cc;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+    font-size: 17px;
+  }
+  
+  .searchBar:focus{
+    color: #065d97;
+    font-size: 17px;
+  }
+
+  #add-book-btn-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  #myBtn {
+    background-color: #1d6fb3;
+    color: white;
+    padding: 11px 17px;
+    border: none;
+    cursor: pointer;
+    width: 230px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
   .append-book {
     display: flex;
     flex-wrap: wrap;
@@ -84,7 +131,7 @@ html {
     text-align: center;
   }
 
-  .title, .author, .pages, .book-link {
+  .title, .author, .pages, .book-url, .book-picture, .read-status {
     text-align: center;
   }
 
@@ -94,8 +141,9 @@ html {
     font-weight: bold;
   }
 
-  .book-author {
-    padding-top: 5px;
+  .book-author, .book-read, .book-pages {
+    padding-top: 4px;
+    color: rgb(230, 221, 221);
   }
 
   .book-title {
