@@ -7,7 +7,7 @@ const setLocalStorage = () => {
 }
 
 const renderDefaultBooks = () => {
-    if (localStorage['myLibrary'].length === 2) { //localStorage at 2 is empty arr - []
+    if (localStorage['myLibrary'] === '[]') { //localStorage at 2 is empty arr - []
         const eloquentJS = new Book(`Eloquent JavaScript`, `by Marijn Haverbeke`, `435 pages`, `Read`, `https://eloquentjavascript.net/`, `https://eloquentjavascript.net/img/cover.jpg`)
         const thinkLikeAProgrammer = new Book(`Think Like A Programmer`, `by Spraul V. A.`, `256 pages`, `Not read`, `https://drive.google.com/file/d/15ygKGZnl2GAIIhVx5VnznrdjF8bK8m_G/view?usp=sharing`, `https://images-na.ssl-images-amazon.com/images/I/51ABP9OsIoL._SX376_BO1,204,203,200_.jpg`)
         const javascriptInfo = new Book(`JavaScript.info`, `by Ilya Kantor`, `1300 pages`, `Not read`, `https://javascript.info/`, ``)
