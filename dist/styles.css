@@ -132,9 +132,9 @@ font-size: 28px;
 
     box-shadow: 0 3px 9px #bbb, inset 0 0 0 1px white;
     width: 270px;
-    height: 350px;
+    height: 353px;
     background-color: #2f7db1f5;
-    padding: 14px; 
+    padding: 16px; 
     margin: 10px;
     border-radius: 6px; 
     border: 2px rgba(216, 112, 147, 0.637) solid; 
@@ -193,8 +193,8 @@ font-size: 28px;
 
   .book-pic {
     justify-self: center;
-    width: 131px;
-    height: 185px;
+    width: 120px;
+    height: 171px;
     margin: 5px;
     border: 2px solid #c1bfc0;
     border-radius: 11px;
