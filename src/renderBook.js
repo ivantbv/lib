@@ -49,7 +49,7 @@ const render = bookInfo => {
     bookLink.target = '_blank'
     bookPic.src = bookInfo.image;
     if (bookPic.getAttribute('src') === '') {
-        bookPic.src = '/images/NotAvailable.jpeg'
+        bookPic.src = 'images/NotAvailable.jpeg'
     }
     bookPic.alt = 'Book\'s image'
 
